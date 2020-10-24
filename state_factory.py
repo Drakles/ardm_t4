@@ -7,7 +7,7 @@ class StateFactory:
     def __init__(self, world, reward):
         self.__reward = reward
         self.__world = world
-        self.__world_fixed_tiles_pos = [pos for pos, reward in world.fixed_tiles]
+        self.__world_fixed_tiles_pos = [pos for pos, reward in world.fixed_tiles.items()]
 
     def create_state(self, pos):
         if pos in self.__world.titles:
