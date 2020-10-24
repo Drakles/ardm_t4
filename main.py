@@ -8,5 +8,5 @@ if __name__ == '__main__':
     for i in range(10):
         value_iter.iter()
 
-    for k, v in value_iter.pos_states.items():
-        print(k, v)
+    for pos, state in value_iter.pos_states.items():
+        print(pos, state)

@@ -30,4 +30,4 @@ class ValueIterator:
         for pos, state in self.pos_states.items():
             max_util_of_next_state = max(
                 [next_state.utility for next_state in possible_next_states(pos, state, self.pos_states)], default=0.0)
-            state.utility = state.reward + max_util_of_next_state
+            state.utility = round(state.reward + max_util_of_next_state,4)
