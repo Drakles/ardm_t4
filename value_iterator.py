@@ -21,7 +21,7 @@ class ValueIterator:
         self.pos_states = {}
 
         state_factory = StateFactory(self.__world, self.__reward)
-        for title in self.__world.titles:
+        for title in self.__world.tiles:
             self.pos_states[title] = state_factory.create_state(title)
 
         self.fixed_titles_pos = [pos for pos, state in world.fixed_tiles.items()]

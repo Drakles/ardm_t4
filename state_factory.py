@@ -10,14 +10,14 @@ class StateFactory:
         self.__world_fixed_tiles_pos = [pos for pos, reward in world.fixed_tiles.items()]
 
     def create_state(self, pos):
-        if pos in self.__world.titles:
+        if pos in self.__world.tiles:
             if pos in self.__world_fixed_tiles_pos:
-                return State(self.__world.fixed_tiles[pos], [])
+                return State(self.__world.fixed_tiles[pos], [], self.__world.fixed_tiles[pos])
 
             possible_actions = []
 
             for next_position, action in all_moves(pos).items():
-                if self.__world.title_exist(next_position):
+                if self.__world.tile_exist(next_position):
                     possible_actions.append(action)
 
             return State(self.__reward, possible_actions)

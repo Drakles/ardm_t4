@@ -1,17 +1,17 @@
 class World:
 
     def __init__(self, length, height, blocked_tiles, fixed_tiles):
-        self.titles = self.__generate_titles(length,height, blocked_tiles)
+        self.tiles = self.__generate_tiles(length, height, blocked_tiles)
         self.fixed_tiles = fixed_tiles
 
-    def __generate_titles(self, length,height, blocked_tiles):
-        titles = []
+    def __generate_tiles(self, length, height, blocked_tiles):
+        tiles = []
         for i in range(length):
             for j in range(height):
                 if (i, j) not in blocked_tiles:
-                    titles.append((i, j))
+                    tiles.append((i, j))
 
-        return titles
+        return tiles
 
-    def title_exist(self, position):
-        return position in self.titles
+    def tile_exist(self, position):
+        return position in self.tiles
